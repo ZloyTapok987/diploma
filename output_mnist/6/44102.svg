@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+<path d="M0,0 L28,0 L28,28 L0,28 Z " fill="#030303" transform="translate(0,0)"/>
+<path d="M0,0 L4,0 L5,4 L0,4 L-4,9 L-5,14 L2,16 L4,11 L7,8 L12,8 L13,13 L7,18 L-3,18 L-7,14 L-6,6 Z " fill="#DCDCDC" transform="translate(12,4)"/>
+<path d="M0,0 L4,0 L5,4 L0,4 L-5,9 L-5,5 Z " fill="#D1D1D1" transform="translate(12,4)"/>
+<path d="M0,0 L4,1 L3,6 L-2,9 L-3,7 L1,4 L2,1 Z " fill="#DFDFDF" transform="translate(21,12)"/>
+<path d="M0,0 L3,0 L1,4 L-4,6 L-2,2 Z " fill="#2C2C2C" transform="translate(20,14)"/>
+</svg>
