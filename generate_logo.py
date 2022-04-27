@@ -64,7 +64,7 @@ def make_svg_text_v2(text, svgs, to):
         res = tokenizer.concat_svg_tensors(res, svg)
     tokenizer.saveSvg(res, filename=to)
 
-def draw_text(text, modell, z, to):
+def draw_text(text, modell, z):
     svgs = []
     tokenizer = SvgTokenizer()
     for word in text:
@@ -103,15 +103,6 @@ def get_z(temperature=.3):
     z = torch.randn(1, 1, 1, cfg.model_cfg.dim_z).to(device) * temperature
     return z
 
-tokenizer = SvgTokenizer()
-for i in range(100):
-    to = f"output/{i}.svg"
-    svg = draw_text(text, deepsvg_model, get_z(), to)
-    print("done " + to)
-    tensor = tokenizer.parseSvg(StringIO(svg.to_str()))
-    tokenizer.saveSvg(tensor, scale=500, filename=to)
-exit()
-
 gan_embeds = load_gan_embeds()
 
 inp = torch.stack(list(gan_embeds.values()), dim=0)
@@ -123,7 +114,7 @@ tokenizer = SvgTokenizer()
 svg_texts = []
 for z in deepSVG_embeds:
     normalize(z, dim=0)
-    svg = draw_text(text, deepsvg_model, get_z())
+    svg = draw_text(text, deepsvg_model, z)
     #plt.imshow(svg.draw(return_png=True))
    # plt.show()
     tensor = tokenizer.parseSvg(StringIO(svg.to_str()))
